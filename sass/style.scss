@@ -1,0 +1,254 @@
+@import "partials/variables";
+@import "partials/mixins";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+// header 
+
+header a.nav-text-size {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+header ul li a {
+  color: $success-color !important;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0 10px !important;
+  margin-left: 10px;
+
+  &:hover {
+    color: $primary-color !important;
+  }
+}
+button {
+  background-color: $primary-color !important;
+}
+
+
+//home section 
+
+.home-section {
+  position: relative;
+}
+div.for-padding-h {
+  padding: 100px 0;
+  min-height: 100vh;
+  h6 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  h1 {
+    font-size: 60px;
+    font-weight: 600;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+a.link-1 {
+  @include link(white, $primary-color);
+  @include hover($success-color, white, $success-color);
+}
+
+a.link-2 {
+  @include link($primary-color, transparent);
+  @include hover($primary-color, white, $primary-color);
+}
+
+div.icon-about {
+  display: flex;
+
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  width: 35px;
+
+  a {
+    background-color: $primary-color;
+    color: white;
+    font-size: 14px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 38px;
+    position: relative;
+  }
+}
+
+.animate__animated {
+  animation-iteration-count: infinite;
+}
+
+
+// about section
+
+section.about-us {
+  background-color: #eaedf2;
+  padding: 100px 0;
+
+  h3 {
+    font-weight: 700;
+    font-size: 35px;
+    padding-bottom: 10px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $primary-color;
+      width: 50px;
+      height: 2px;
+      bottom: 0px;
+      left: 0;
+    }
+  }
+  div.image {
+    position: relative;
+    div.icons {
+      position: absolute;
+      top: 20px;
+      left: -10px;
+      width: 50px;
+      padding: 8px;
+      background-color: white;
+      display: flex;
+      flex-wrap: wrap;
+
+      a {
+        @include hover($success-color, white, $success-color);
+        background-color: $primary-color;
+        width: 34px;
+        height: 34px;
+        margin: 3px 0;
+        padding: 0;
+        text-align: center;
+        line-height: 35px;
+        font-size: 12px;
+        color: white;
+      }
+    }
+  }
+
+  div.col-md-12 p {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+  }
+
+  div.text {
+    padding: 40px 0 0 40px;
+
+    h4 {
+      font-weight: 600;
+      font-size: 30px;
+    }
+
+    h6 {
+      font-weight: 400;
+      font-size: 18px;
+
+      span {
+        color: $primary-color;
+      }
+    }
+    p.about-text {
+      color: #555a64;
+      padding: 15px 0;
+    }
+  }
+
+  div.image {
+    border: 14px solid white;
+  }
+
+  .first-div {
+    align-items: flex-start;
+    span {
+      font-weight: 500;
+      font-size: 14px;
+      flex-basis: 90px;
+      border-right: 1px solid #c1c1c1;
+    }
+    p {
+      padding-left: 15px;
+      font-size: 14px;
+      color: #555a64;
+    }
+  }
+  a.link-3 {
+    @include link(white, $primary-color);
+    @include hover($success-color, white, $success-color);
+    margin: 15px;
+  }
+}
+
+
+
+@media (max-width: 991px) {
+  header ul {
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+
+    li a {
+      padding: 8px 0 !important;
+      border-bottom: 1px solid #ddd;
+    }
+    li a.end-link {
+      border: 0;
+    }
+  }
+
+  div.for-padding-h {
+    h6 {
+      font-size: 15px;
+    }
+    h1 {
+      font-size: 40px;
+    }
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+  #about div.text {
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tony-home {
+    padding: 25px;
+  }
+  div.for-padding-h {
+    h6 {
+      font-size: 14px;
+    }
+    h1 {
+      font-size: 35px;
+    }
+    h2 {
+      font-size: 16px;
+    }
+  }
+
+  div.icon-about {
+    bottom: 10px;
+  }
+
+  section.about-us {
+    padding: 60px 0;
+  }
+}
